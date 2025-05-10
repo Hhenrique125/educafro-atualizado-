@@ -47,6 +47,9 @@
     --primary: var(--color-header_footer);
     --secondary: var(--color-buttons);
     --card-bg:var(--color-background-card);
+    --color-button-hover: var(--color-button-hover);
+    --color-button-hover-border: var( --color-button-hover-border);
+    --color-background-card-tittl: var(  --color-background-card-tittle);
     --border: #333;
 }
 
