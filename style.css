@@ -43,10 +43,10 @@
     --color-background-card-tittle: #e5f1ff;
     
     /* Ajustes específicos para dark mode */
-    --text-color: #fff;
-    --primary: #1e74d5;
-    --secondary: #78b2f4;
-    --card-bg: #1e1e1e;
+    --text-color: var(--color-font);
+    --primary: var(--color-header_footer);
+    --secondary: var(--color-buttons);
+    --card-bg:var(--color-background-card);
     --border: #333;
 }
 
