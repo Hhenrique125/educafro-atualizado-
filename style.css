@@ -3,35 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap');
 
-/* Light Theme (Default) */
+/* Dark Theme (Default) - SEU ESTILO ORIGINAL */
 :root {
-    /* Cores originais do tema light */
-    --color-background: #ffffff;
-    --color-header_footer: #1e74d5;
-    --color-font-header_footer: #000000;
-    --color-buttons: #78b2f4;
-    --color-font: #050505;
-    --color-button-hover: #78b2f4;
-    --color-button-hover-border: #80b9fb;
-    --color-background-card: #80b9fb;
-    --color-background-card-tittle: #e5f1ff;
-    
-    /* Fontes originais */
-    --font-weight: 400;
-    --font-buttons: "poppins", 'sans-serif';
-    --font-titles: "poppins";
-    --font-pg: 'rubik';
-    
-    /* Novas variáveis para consistência */
-    --text-color: var(--color-font);
-    --primary: var(--color-header_footer);
-    --secondary: var(--color-buttons);
-    --card-bg: var(--color-background-card);
-    --border: #e0e0e0;
-}
-
-/* Dark Theme */
-[data-theme="dark"] {
     --color-background: #3C3D37;
     --color-header_footer: #2d2e2e;
     --color-font-header_footer: #4A90E2;
@@ -41,16 +14,23 @@
     --color-button-hover-border: #80b9fb;
     --color-background-card: #dfdfdf;
     --color-background-card-tittle: #e5f1ff;
-    
-    /* Ajustes específicos para dark mode */
-    --text-color: var(--color-font);
-    --primary: var(--color-header_footer);
-    --secondary: var(--color-buttons);
-    --card-bg:var(--color-background-card);
-    --color-button-hover: var(--color-button-hover);
-    --color-button-hover-border: var( --color-button-hover-border);
-    --color-background-card-tittl: var(  --color-background-card-tittle);
-    --border: #333;
+    --font-weight: 400;
+    --font-buttons: "poppins", 'sans-serif';
+    --font-titles: "poppins";
+    --font-pg: 'rubik';
+}
+
+/* Light Theme (Alternativo) */
+[data-theme="light"] {
+    --color-background: #ffffff;
+    --color-header_footer: #1e74d5;
+    --color-font-header_footer: #000000;
+    --color-buttons: #78b2f4;
+    --color-font: #050505;
+    --color-button-hover: #78b2f4;
+    --color-button-hover-border: #80b9fb;
+    --color-background-card: #80b9fb;
+    --color-background-card-tittle: #e5f1ff;
 }
 
 /* Base Styles */
@@ -59,7 +39,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: var(--color-background);
-    color: var(--text-color);
+    color: var(--color-font);
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -84,21 +64,21 @@ header {
 
 .logo_logo i {
     font-size: 50px;
-    color: var(--color-font);
+    color: var(--color-buttons);
     transition: color 0.3s;
 }
 
 .logo h1 {
     margin: 0;
     font-size: 24px;
-    color: var(--color-background);
+    color: var(--color-font);
     font-style: italic;
 }
 
 .logo p {
     margin: 0;
     font-size: 14px;
-    color: var(--color-background);
+    color: var(--color-background-card);
     font-family: var(--font-pg);
     font-weight: 100;
     font-style: italic;
@@ -122,7 +102,7 @@ header {
 .list_links li a {
     text-decoration: none;
     font-weight: 400;
-    color: var(--color-background);
+    color: var(--color-font-header_footer);
     transition: all 0.2s ease;
 }
 
@@ -132,7 +112,7 @@ header {
     background-color: var(--color-button-hover);
     border-radius: 30px;
     font-weight: 700;
-    color: var(--color-header_footer);
+    color: var(--color-font);
     transition: all 0.2s ease;
 }
 
@@ -144,7 +124,7 @@ header {
 }
 
 .theme-toggle {
-    background: var(--primary);
+    background: var(--color-buttons);
     color: white;
     border: none;
     padding: 8px 16px;
@@ -161,18 +141,11 @@ header {
 }
 
 /* Theme Icons */
-.icon-light { display: inline-block; }
-.icon-dark { display: none; }
+.icon-light { display: none; }
+.icon-dark { display: inline-block; }
 
-[data-theme="dark"] .icon-light,
-[data-theme="light"] .icon-dark {
-    display: none;
-}
-
-[data-theme="dark"] .icon-dark,
-[data-theme="light"] .icon-light {
-    display: inline-block;
-}
+[data-theme="light"] .icon-light { display: inline-block; }
+[data-theme="light"] .icon-dark { display: none; }
 
 /* Hero Section */
 .hero {
@@ -184,7 +157,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--color-background);
+    color: var(--color-font);
     text-align: center;
     padding: 50px;
 }
@@ -208,8 +181,8 @@ header {
 .btn-cta {
     font-weight: 400;
     font-family: var(--font-buttons);
-    background-color: var(--primary);
-    color: var(--color-background);
+    background-color: var(--color-buttons);
+    color: var(--color-font);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -220,8 +193,8 @@ header {
 }
 
 .btn-cta:hover {
-    border: 2px solid var(--primary);
-    color: var(--primary);
+    border: 2px solid var(--color-buttons);
+    color: var(--color-buttons);
     font-weight: 700;
     background-color: transparent;
 }
@@ -238,7 +211,7 @@ header {
 
 .text-destaques-courses {
     margin-bottom: 15px;
-    color: var(--text-color);
+    color: var(--color-font);
     font-weight: 200;
     font-size: 35px;
     font-family: var(--font-titles);
@@ -259,7 +232,7 @@ header {
     border: none;
     transition: all 0.3s ease;
     padding: 20px;
-    background-color: var(--card-bg);
+    background-color: var(--color-background-card);
     border-radius: 10px;
     width: 30%;
     margin-bottom: 20px;
@@ -268,22 +241,22 @@ header {
 .card:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    border: 2px solid var(--primary);
+    border: 2px solid var(--color-buttons);
 }
 
 .card-body .card-title {
-    color: var(--primary);
+    color: var(--color-buttons);
     background-color: var(--color-background-card-tittle);
     padding: 10px;
     width: 50%;
     border-radius: 30px;
     text-align: center;
-    border: 2px solid var(--primary);
+    border: 2px solid var(--color-buttons);
     font-family: var(--font-titles);
 }
 
 .card-body .card-text {
-    color: var(--text-color);
+    color: var(--color-font);
     font-weight: var(--font-weight);
     font-family: var(--font-pg);
 }
@@ -297,8 +270,8 @@ header {
 
 /* Buttons */
 .btn {
-    background-color: var(--primary);
-    color: var(--color-background);
+    background-color: var(--color-buttons);
+    color: var(--color-font);
     padding: 10px 20px;
     border-radius: 5px;
     transition: all 0.3s ease;
@@ -309,8 +282,8 @@ header {
 }
 
 .btn:hover {
-    border: 2px solid var(--primary);
-    color: var(--primary);
+    border: 2px solid var(--color-buttons);
+    color: var(--color-buttons);
     font-weight: 700;
     background-color: transparent;
 }
@@ -326,7 +299,7 @@ header {
 }
 
 .destaques-biblioteca_tittle {
-    color: var(--text-color);
+    color: var(--color-font);
     font-size: 35px;
     margin-bottom: 15px;
     font-family: var(--font-titles);
@@ -340,7 +313,7 @@ header {
 }
 
 .card-list .card-item {
-    color: var(--text-color);
+    color: var(--color-font);
     width: 50px;
     padding: 15px 0;
     display: flex;
@@ -348,19 +321,19 @@ header {
     justify-content: center;
     align-items: center;
     border-radius: 8px;
-    background-color: var(--card-bg);
+    background-color: var(--color-background-card);
 }
 
 .card-list .card-item img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 3px solid var(--primary);
+    border: 3px solid var(--color-buttons);
     padding: 8px;
 }
 
 .obra-name {
-    color: var(--primary);
+    color: var(--color-buttons);
     font-family: var(--font-titles);
     font-weight: 500;
 }
@@ -372,8 +345,8 @@ header {
 }
 
 .card-list .card-item .message-button {
-    background-color: var(--primary);
-    color: var(--color-background);
+    background-color: var(--color-buttons);
+    color: var(--color-font);
     font-size: 1.25rem;
     padding: 10px 35px;
     font-weight: 200;
@@ -384,25 +357,25 @@ header {
 }
 
 .card-list .card-item .message-button:hover {
-    border: 2px solid var(--primary);
-    color: var(--primary);
+    border: 2px solid var(--color-buttons);
+    color: var(--color-buttons);
     font-weight: 700;
     background-color: transparent;
 }
 
 .slider-wrapper .swiper-pagination-bullet {
-    background-color: var(--primary);
+    background-color: var(--color-buttons);
     height: 15px;
     width: 15px;
 }
 
 .slider-wrapper .swiper-slider-button {
-    color: var(--primary);
+    color: var(--color-buttons);
     margin-top: -50px;
 }
 
 .slider-wrapper .swiper-slider-button:hover {
-    color: var(--secondary);
+    color: var(--color-button-hover);
 }
 
 .author-info {
@@ -414,7 +387,7 @@ header {
 .sec-comunity {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
                 url('https://plus.unsplash.com/premium_photo-1723651236713-47f93bc78e98?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
-    color: var(--color-background);
+    color: var(--color-font);
     padding: 50px;
 }
 
@@ -426,7 +399,7 @@ header {
 .sec-comunity .comunity_tittle {
     font-size: 2.5rem;
     font-weight: 400;
-    color: var(--color-background-card-tittle);
+    color: var(--color-buttons);
     font-family: var(--font-titles);
 }
 
@@ -446,8 +419,8 @@ header {
 }
 
 .btn-principal {
-    background-color: var(--primary);
-    color: var(--color-background);
+    background-color: var(--color-buttons);
+    color: var(--color-font);
 }
 
 .btn-principal:hover {
@@ -456,13 +429,13 @@ header {
 
 .btn-segundario {
     background-color: transparent;
-    border: 2px solid var(--color-background);
-    color: var(--color-background);
+    border: 2px solid var(--color-font);
+    color: var(--color-font);
 }
 
 .btn-segundario:hover {
-    background-color: var(--secondary);
-    color: var(--primary);
+    background-color: var(--color-buttons);
+    color: var(--color-font);
 }
 
 /* About Section */
@@ -472,7 +445,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 40px 20px;
-    background-color: var(--card-bg);
+    background-color: var(--color-background);
     overflow: hidden;
 }
 
@@ -486,22 +459,22 @@ header {
     font-size: 36px;
     font-weight: bold;
     margin-bottom: 20px;
-    color: var(--text-color);
+    color: var(--color-font);
     font-family: var(--font-titles);
 }
 
 .text-content .text-content-paragraph {
     font-size: 18px;
-    color: var(--text-color);
+    color: var(--color-font);
     line-height: 1.6;
     font-family: var(--font-pg);
 }
 
 .text-content .text-content-btn {
     padding: 15px 60px;
-    background-color: var(--primary);
+    background-color: var(--color-buttons);
     border: none;
-    color: var(--color-background);
+    color: var(--color-font);
     text-decoration: none;
     text-align: center;
     font-size: 15px;
@@ -513,13 +486,13 @@ header {
 
 .text-content .text-content-btn:hover {
     background: transparent;
-    border: 2px solid var(--primary);
-    color: var(--primary);
+    border: 2px solid var(--color-button-hover);
+    color: var(--color-button-hover);
     font-weight: 600;
 }
 
 .img_container {
-    border-left: 25px solid var(--primary);
+    border-left: 25px solid var(--color-buttons);
     height: 70vh;
 }
 
@@ -532,7 +505,7 @@ header {
 /* Footer */
 #footer-home {
     background-color: var(--color-header_footer);
-    color: var(--color-background);
+    color: var(--color-font);
     padding: 40px 0;
 }
 
@@ -564,14 +537,14 @@ header {
 }
 
 #footer-home ul li a {
-    color: var(--secondary);
+    color: var(--color-buttons);
     text-decoration: none;
     font-family: var(--font-pg);
     transition: color 0.3s;
 }
 
 #footer-home ul li a:hover {
-    color: var(--color-background);
+    color: var(--color-font);
     text-decoration: underline;
 }
 
@@ -586,8 +559,8 @@ header {
 }
 
 .btn-footer-donate {
-    background-color: var(--primary);
-    color: var(--color-background);
+    background-color: var(--color-buttons);
+    color: var(--color-font);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -598,8 +571,8 @@ header {
 
 .btn-footer-donate:hover {
     background-color: transparent;
-    border: 2px solid var(--primary);
-    color: var(--primary);
+    border: 2px solid var(--color-button-hover);
+    color: var(--color-button-hover);
     transform: scale(1.05);
 }
 
@@ -611,12 +584,12 @@ header {
 
 .links_redes_sociais a i {
     font-size: 1.5rem;
-    color: var(--color-background);
+    color: var(--color-font);
     transition: color 0.3s;
 }
 
 .links_redes_sociais a i:hover {
-    color: var(--secondary);
+    color: var(--color-buttons);
 }
 
 .end-footer_pg {
@@ -657,7 +630,7 @@ header {
     
     .img_container {
         border-left: none;
-        border-top: 15px solid var(--primary);
+        border-top: 15px solid var(--color-buttons);
         width: 100%;
         height: auto;
     }
